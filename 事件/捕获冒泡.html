@@ -15,13 +15,11 @@
             height: 50px;
             background-color: blue;
         }
-
         #inner {
             background-color: red;
         }
     </style>
 </head>
-
 <body>
     <div id="out">
         out
@@ -30,13 +28,15 @@
         </div>
     </div>
 </body>
-
 <script>
    // 冒泡和捕获共存
    // 被点击到节点为 target 节点
    // 1. document往target 节点前进，遇到捕获的事件立即执行；
    // 2. 到达 target 节点，触发事件，（target 节点上，先执行捕获还是冒泡，先注册先执行）
    // 3. targe节点到 document，冒泡前进，遇到注册的冒泡时间立即触发
+   // 总结
+   // 对于非target节点则先执行捕获在执行冒泡
+   // 对于target节点则是先执行先注册的事件，无论冒泡还是捕获
     var out = document.getElementById("out");
     var inner = document.getElementById("inner");
     out.addEventListener("click", function () {
