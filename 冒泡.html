@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 80px;
+        }
+        #out{
+            height: 50px;
+            background-color: blue;
+        }
+        #inner{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="out">
+        out
+        <div id="inner">
+            inner
+        </div>
+    </div>
+</body>
+<script>
+    var out = document.getElementById("out");
+    out.addEventListener("click", function() {
+        alert("out冒泡事件");        
+    });
+    var inner = document.getElementById("inner");
+    inner.addEventListener("click", function(){
+         alert("inner 冒泡事件");   
+    });
+</script>
+</html>

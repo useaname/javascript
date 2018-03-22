@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 80px;
+        }
+
+        #out {
+            height: 50px;
+            background-color: blue;
+        }
+
+        #inner {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="out">
+        out
+        <div id="inner">
+            inner
+        </div>
+    </div>
+</body>
+
+<script>
+   // 冒泡和捕获共存
+   // 被点击到节点为 target 节点
+   // 1. document往target 节点前进，遇到捕获的事件立即执行；
+   // 2. 到达 target 节点，触发事件，（target 节点上，先执行捕获还是冒泡，先注册先执行）
+   // 3. targe节点到 document，冒泡前进，遇到注册的冒泡时间立即触发
+    var out = document.getElementById("out");
+    var inner = document.getElementById("inner");
+    out.addEventListener("click", function () {
+        alert("out冒泡")
+    }, false);
+    out.addEventListener("click", function () {
+        alert("out捕获");
+    }, true);
+    inner.addEventListener("click", function () {
+        alert("inner 捕获");
+    }, true);
+    inner.addEventListener("click", function () {
+        alert("inner冒泡")
+    }, false);
+</script>
+
+</html>
