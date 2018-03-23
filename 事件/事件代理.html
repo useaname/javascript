@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件监听</title>
+</head>
+<body>
+    <ul id="color-list">
+            <li>red</li>
+            <li>yellow</li>
+            <li>blue</li>
+            <li>green</li>
+            <li>black</li>
+            <li>white</li>
+    </ul>
+</body>
+<script>
+    (function() {
+        //利用事件流特性
+        var color_list = document.getElementById("color-list");
+        color_list.addEventListener("click", showColor, true);
+        function showColor(e) {
+            var x = e.target;
+            console.log("the color is " + x.innerHTML);
+        }
+    }());
+</script>
+</html>
