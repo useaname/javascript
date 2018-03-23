@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // console.group()
+    // 在 Web控制台上创建一个新的分组.随后输出到控制台上的内容都会被添加一个缩进,
+    // 表示该内容属于当前分组,直到调用console.groupEnd()之后,当前分组结束.
+    (function() {
+        console.group("A");
+        console.log("第一层！");
+        console.group("B");
+        console.log("第二层！");
+        console.groupEnd();
+        console.groupEnd();
+        
+        // groupCollapsed() 默认折叠
+        console.groupCollapsed();
+        console.log("A！");
+        console.groupCollapsed("第二层！");
+        console.log("B")
+        console.groupEnd();
+        console.groupEnd();
+    }());
+</script>
+</html>
