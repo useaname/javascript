@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 箭头函数里没有 this,需要从上层查找，下面例子中 setTimeout上层是作用域是 fn，
+    // 而 fn 里的 this 是 obj，所以箭头函数里的 this 是 obj。
+    (function(){
+        var obj = {
+            a: 222,
+            fn: function() {
+                setTimeout(()=>{console.log(this.a)} )
+            }
+        };
+        obj.fn();
+    }());
+   
+</script>
+</html>

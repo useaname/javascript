@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 虽然 fn() 里面的 this 是指向 obj ，但是，传给 setTimeout 的是普通函数， this 指向是 window ， 
+    // window 下面没有 a ，所以这里输出 underfind 。
+    (function(){
+        let obj = {
+            a: 222,
+            fn: function() {
+                setTimeout(function(){console.log(this.a)});
+            }
+        }
+        obj.fn();
+    }());
+</script>
+</html>
