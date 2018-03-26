@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 因为是自动执行函数，会自动执行。
+    // 这个对象赋值给 add 。由于 add 里面有函数是依赖于 now 这个变量。
+    // 所以 now不会被销毁，回收。这就是闭包的用途之一（延续变量周期）。
+    // 由于 now 在外面访问不到，这就是闭包的另一个用途（创建局部变量，保护局部变量不会被访问和修改）。
+    let add = (function () {
+        let now = 0;
+        return {
+            doAdd: function () {
+                now++;
+                console.log(now);
+            }
+        }
+    })();
+</script>
+
+</html>
