@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    (function(){
+        // 稀疏数组:指的是含有空白或空缺单元的数组
+        var a = [ ];
+        console.log(a.length); // 0
+        a[4] = a [5]; // a[5]未定义所以为 undefined ， 等价为等价为a[4] = undefined
+        a.forEach(ele => {
+            console.log(ele); // undefined
+        });
+        console.log(a);   // [,,,,undefined]
+    }());
+</script>
+</html>

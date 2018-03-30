@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    (function(){
+        // 字符串索引
+        // 数组不仅可以通过数字索引,也可以通过字符串索引,
+        // 但值得注意的是,字符串索引的键值对并不算在数组的长度里.
+        var a = [ ];
+        a[0] = 'BBB';
+        a["age"] = "28";
+        console.log(a.length);
+        console.log(a["age"]);      
+        console.log(a);
+    }());
+</script>
+</html>
