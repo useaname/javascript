@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    (function(){
+        var a = 0.1 + 0.2;
+        var b = 0.3;
+        // 二进制浮点数带来的问题
+        console.log(a === b); // false 
+        console.log(Number.isInteger(a*10)); // false 
+        console.log(Number.isInteger(b*10)); // true
+    }());
+</script>
+</html>
