@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 采用事件驱动模式
+    // 异步任务的执行不取决于代码的顺序，而取决于某个事件是否发生。
+    // 还是以f1和f2为例
+    function f1() { 
+        console.log('f1...')
+    };
+    function f2() {
+        console.log('f2...')
+     };
+    // 为f1绑定一个事件
+    f1.on('done', f2);
+    function f1() {
+        setTimeout(function() {
+            f1.trigger('done')
+        }, 1000);
+    }
+    // 这种方法的优点是比较容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，
+    // 而且可以”去耦合“（decoupling），有利于实现模块化。缺点是整个程序都要变成事件驱动型，运行流程会变得很不清晰。
+    // 阅读代码的时候，很难看出主流程    
+</script>
+
+</html>
