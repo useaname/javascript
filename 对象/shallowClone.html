@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    (function(){
+          // 浅克隆
+          // 之所以称为浅克隆，因为对象只会克隆最外面的一层，
+          // 至于更深层的对象， 则依然是通过引用指向同一块内存
+          function shallowClone(o) {
+              const obj = {};
+              for(let i in o) {
+                  obj[i] = o[i];
+              }
+              return obj;
+          }
+
+          const oldObj = {
+              a: 1,
+              b: ['e', 'f', 'g'],
+              c: { h: { i: 2} }
+          };
+          const newObj = shallowClone(oldObj);  
+          console.log(newObj.c.h, oldObj.c.h);
+          console.log(oldObj.c.h === newObj.c.h);
+
+          newObj.c.h = "change";
+          console.log(newObj.c.h, oldObj.c.h);                   
+    }());
+</script>
+</html>
